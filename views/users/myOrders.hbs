@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Liquor Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url(/banner-images/{{banner.[0]._id}}.jpg);"
+        data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate mb-5 text-center">
+                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="/">Home <i
+                                    class="fa fa-chevron-right"></i></a></span><span>My Orders <i
+                                class="fa fa-chevron-right"></i></span></p>
+                    <h2 class="mb-0 bread">My Orders</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="table-wrap">
+                    <table class="table" id="mydiv">
+                        <thead class="thead-primary">
+                            <tr>
+                                <th></th>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Order Total</th>
+                                <th>Address</th>
+                                <th>Date</th>
+                                <th>Payment Mode</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each myOrders}}
+                            <tr class="alert" role="alert">
+                                <td>
+                                <a href="/orderTracking/{{this.productDetails._id}}/{{this._id}}"> <div class="img" 
+                                 
+                                        style="background-image: url(/product-images/{{this.productDetails._id}}.jpg);">
+                                        
+
+                                    </div></a>
+                                   
+                                </td>
+                                <td>
+                                    <div class="name">
+                                        <span>{{this.productDetails.name}}<br><p class="font-weight-light" style="font-style:italic ;font-size: smaller;">{{this.productDetails.category}}</p></span>
+                                    </div>
+                                </td>
+                                <td>&#x20B9; {{this.productDetails.price}}</td>
+
+
+                                <td>{{this.products.quantity}}</td>
+                                <td>{{this.Total}}</td>
+                                <td>{{this.deliveryDetails.name}}<br>{{this.deliveryDetails.buildingName}},<br>{{this.deliveryDetails.city}},
+                                {{this.deliveryDetails.postcode}},<br>PH: {{this.deliveryDetails.phone}}</td>
+                                <td>{{this.date}}</td>
+                                <td>{{this.paymentMethod}}</td>
+                            </tr>
+                            {{/each}}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="ftco-footer">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-sm-12 col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2 logo"><a href="#">Liquor <span>Store</span></a></h2>
+                        <p>Far far away, behind the word mountains, far from the countries.</p>
+                        <ul class="ftco-footer-social list-unstyled mt-2">
+                            <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-4">
+                        <h2 class="ftco-heading-2">My Accounts</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Account</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Register</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Log In</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Order</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-4">
+                        <h2 class="ftco-heading-2">Information</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Quick Link</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>New User</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help Center</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Report Spam</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Faq's</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Have a Questions?</h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain
+                                        View, San Francisco, California, USA</span></li>
+                                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929
+                                            210</span></a></li>
+                                <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
+                                            class="text">info@yourdomain.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid px-0 py-5 bg-black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <p class="mb-0" style="color: rgba(255,255,255,.5);">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                            template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a
+                                href="https://colorlib.com" target="_blank">Colorlib.com</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+        </svg></div>
+
+
+
+</body>
+
+</html>

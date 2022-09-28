@@ -1,0 +1,45 @@
+<section class="d-flex justify-content-center mb-5">
+  <div class=" container row">
+    <div class="ml-5 col-md-6">
+      <h2 class="text-center mt-5">Edit Products</h2>
+      <form action="/admin/editproducts/{{products._id}}" method="post" enctype="multipart/form-data" class="text-danger" id="editProduct">
+
+        <label class="text-dark" for="">Name</label>
+        <input type="text" name="name" class="form-control" value="{{products.name}}" required><br>
+
+       
+
+        <label for="" class="text-dark">Description</label>
+        <input type="text" name="description" class="form-control" value="{{products.description}}" required><br>
+         <label class="text-dark" for="">Salect Category</label><br>
+        <select  name="category" class="form-select" id="" required>
+          {{#each category}}
+          <option value="{{this.name}}">{{this.name}}</option>
+           {{/each}}
+        </select>
+
+        <label for="" class="text-dark">Price</label>
+        <input type="Number" name="price" class="form-control"value="{{products.price}}" required><br>
+
+       
+
+        <label for="" class="text-dark">Image</label>
+        <input type="file" name="Image" class="form-control" required><br>
+
+
+
+
+        <button type="submit" class="btn btn-success mt-4">Submit</button>
+
+      </form>
+    </div>
+  </div>
+          <img src="/product-images/{{products._id}}.jpg" class="mr-5" alt="" style="width: 300px;height: 300px; border-style: solid;">
+
+</section>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script>
+  $("#editProduct").validate();
+</script>

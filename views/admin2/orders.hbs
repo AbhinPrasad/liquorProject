@@ -1,0 +1,105 @@
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+               
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+            <th>No</th>
+            <th>User Name</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total Price</th>
+            <th>Payment<br>Method</th>
+            <th>Status</th>
+            <th>Date of<br>Order</th>
+            <th></th>
+
+        </tr>
+                            </thead>
+
+                           <tbody>
+        {{#each orders}}
+        <tr>
+            <td>{{inc @index}}</td>
+            <td>{{this.userDetails.name}}</td>
+            <td>{{this.productDetails.name}}</td>
+            <td>{{this.products.quantity}}</td>
+            <td>{{this.totalPrice}}</td>
+            <td>{{this.paymentMethod}}</td>
+            {{#if products.placed}}
+            <td><a href="/admin/changeStatus/{{this._id}}/{{this.productDetails._id}}/{{this.products.status}}"
+                    class="btn btn-warning btn-sm">{{this.products.status}}</a></td>
+            {{else if products.shipped}}
+            <td><a href="/admin/changeStatus/{{this._id}}/{{this.productDetails._id}}/{{this.products.status}}"
+                    class="btn btn-primary btn-sm">{{this.products.status}}</a></td>
+            {{else if products.cancelled}}
+            <td><a href="" class="btn btn-danger btn-sm">{{this.products.status}}</a></td>
+            {{else}}
+            <td><a href="/admin/changeStatus/{{this._id}}/{{this.productDetails._id}}/{{this.products.status}}"
+                    class="btn btn-success btn-sm">{{this.products.status}}</a></td>
+            {{/if}}
+            <td>{{this.date}}</td>
+            {{#if products.cancelled}}
+            <td class="text-danger">Cancelled</td>
+            {{else if products.delivered}}
+            <td class="text-success">Delivered on {{products.deliveryDate}}</td>
+            {{else}}
+            <td><a href="/cancelOrder/{{this._id}}/{{this.products.item}}" class="btn btn-danger btn-sm">Cancel</a></td>
+            {{/if}}
+        </tr>
+        {{/each}}
+
+    </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Your Website 2020</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+   
+
+
+    
+
+</body>

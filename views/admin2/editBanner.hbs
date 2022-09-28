@@ -1,0 +1,28 @@
+<section class="d-flex justify-content-center mb-5">
+    <div class=" container row">
+        <div class="ml-5 col-md-6">
+            <h2 class="text-center mt-5">Edit Banner</h2>
+            <form action="/admin/editbanner/{{banner._id}}" method="post" enctype="multipart/form-data" class="text-danger"
+                id="addProduct">
+
+                <label class="text-dark" for="">Name</label>
+                <input type="text" name="name" class="form-control" value="{{banner.name}}" required><br>
+                <label for="" class="text-dark">Main Description</label>
+                <input type="text" name="description1" class="form-control" value="{{banner.description1}}"><br>
+                <label for="" class="text-dark">Sub Description(optional)</label>
+                <input type="text" name="subDescription" class="form-control" value="{{banner.subDescription}}"><br>
+                
+                <label for="" class="text-dark">Image</label>
+                <input type="file" name="Image" class="form-control" required><br>
+                <button type="submit" class="btn btn-success mt-4">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script>
+    $("#addProduct").validate();
+</script>

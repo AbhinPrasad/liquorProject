@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Liquor Store</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+
+	{{!-- <div class="wrap">
+		<div class="container">
+			<div class="row">
+
+				<div class="reg">
+					<p class="mb-0"><a href="#" class="mr-2">Sign Up</a> <a href="/login">Log In</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div> --}}
+
+	{{!-- <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">Liquor <span>store</span></a>
+			<div class="order-lg-last btn-group">
+				<a href="#" class="btn-cart dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">
+					<span class="flaticon-shopping-bag"></span>
+					<div class="d-flex justify-content-center align-items-center"><small>3</small></div>
+				</a>
+				<div class="dropdown-menu dropdown-menu-right">
+					<div class="dropdown-item d-flex align-items-start" href="#">
+						<div class="img" style="background-image: url(images/prod-1.jpg);"></div>
+						<div class="text pl-3">
+							<h4>Bacardi 151</h4>
+							<p class="mb-0"><a href="#" class="price">$25.99</a><span class="quantity ml-3">Quantity:
+									01</span></p>
+						</div>
+					</div>
+					<div class="dropdown-item d-flex align-items-start" href="#">
+						<div class="img" style="background-image: url(images/prod-2.jpg);"></div>
+						<div class="text pl-3">
+							<h4>Jim Beam Kentucky Straight</h4>
+							<p class="mb-0"><a href="#" class="price">$30.89</a><span class="quantity ml-3">Quantity:
+									02</span></p>
+						</div>
+					</div>
+					<div class="dropdown-item d-flex align-items-start" href="#">
+						<div class="img" style="background-image: url(images/prod-3.jpg);"></div>
+						<div class="text pl-3">
+							<h4>Citadelle</h4>
+							<p class="mb-0"><a href="#" class="price">$22.50</a><span class="quantity ml-3">Quantity:
+									01</span></p>
+						</div>
+					</div>
+					<a class="dropdown-item text-center btn-link d-block w-100" href="cart.html">
+						View All
+						<span class="ion-ios-arrow-round-forward"></span>
+					</a>
+				</div>
+			</div>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Products</a>
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							<a class="dropdown-item" href="product.html">Products</a>
+							<a class="dropdown-item" href="cart.html">Cart</a>
+							<a class="dropdown-item" href="checkout.html">Checkout</a>
+						</div>
+					</li>
+					<li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+					<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+					<li class="nav-item dropdown">
+
+						{{#if user}}
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> {{user.name}}</a>
+
+						{{else}}
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false">Account</a>
+
+						{{/if}}
+
+						<div class="dropdown-menu" aria-labelledby="dropdown04">
+							{{#if user}}
+							<a class="dropdown-item" href="/logout">Logout</a>
+							{{else}}
+							<a class="dropdown-item" href="/login">Login</a>
+							<a class="dropdown-item" href="/signup">Sign Up</a>
+							{{/if}}
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav> --}}
+	<!-- END nav -->
+
+	<div class="hero-wrap" style="background-image: url(/banner-images/{{banner.[0]._id}}.jpg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text align-items-center justify-content-center">
+				<div class="col-md-8 ftco-animate d-flex align-items-end">
+					<div class="text w-100 text-center">
+						<h1 class="mb-4">Good <span>Drink</span> for Good <span>Moments</span>.</h1>
+						<p><a href="#" class="btn btn-primary py-2 px-4">Shop Now</a> <a href="#"
+								class="btn btn-white btn-outline-white py-2 px-4">Read more</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="ftco-intro">
+		<div class="container">
+			<div class="row no-gutters">
+				<div class="col-md-4 d-flex">
+					<div class="intro d-lg-flex w-100 ftco-animate">
+						<div class="icon">
+							<span class="flaticon-support"></span>
+						</div>
+						<div class="text">
+							<h2>Online Support 24/7</h2>
+							<p>A small river named Duden flows by their place and supplies it with the necessary
+								regelialia.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex">
+					<div class="intro color-1 d-lg-flex w-100 ftco-animate">
+						<div class="icon">
+							<span class="flaticon-cashback"></span>
+						</div>
+						<div class="text">
+							<h2>Money Back Guarantee</h2>
+							<p>A small river named Duden flows by their place and supplies it with the necessary
+								regelialia.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex">
+					<div class="intro color-2 d-lg-flex w-100 ftco-animate">
+						<div class="icon">
+							<span class="flaticon-free-delivery"></span>
+						</div>
+						<div class="text">
+							<h2>Free Shipping &amp; Return</h2>
+							<p>A small river named Duden flows by their place and supplies it with the necessary
+								regelialia.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-no-pb">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 img img-3 d-flex justify-content-center align-items-center"
+					style="background-image: url(/banner-images/{{banner.[1]._id}}.jpg);">
+				</div>
+				<div class="col-md-6 wrap-about pl-md-5 ftco-animate py-5">
+					<div class="heading-section">
+						<span class="subheading">Since 1905</span>
+						<h2 class="mb-4">{{banner.[1].description1}}</h2>
+
+						<p>{{banner.[1].subDescription}}</p>
+						
+						<p class="year">
+							<strong class="number" data-number="115">0</strong>
+							<span>Years of Experience In Business</span>
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-no-pb">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-2 col-md-4 ">
+					<div class="sort w-100 text-center ftco-animate">
+						<div class="img" style="background-image: url(images/kind-1.jpg);"></div>
+						<h3>Brandy</h3>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 ">
+					<div class="sort w-100 text-center ftco-animate">
+						<div class="img" style="background-image: url(images/kind-2.jpg);"></div>
+						<h3>Gin</h3>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 ">
+					<div class="sort w-100 text-center ftco-animate">
+						<div class="img" style="background-image: url(images/kind-3.jpg);"></div>
+						<h3>Rum</h3>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 ">
+					<div class="sort w-100 text-center ftco-animate">
+						<div class="img" style="background-image: url(images/kind-4.jpg);"></div>
+						<h3>Tequila</h3>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 ">
+					<div class="sort w-100 text-center ftco-animate">
+						<div class="img" style="background-image: url(images/kind-5.jpg);"></div>
+						<h3>Vodka</h3>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-4 ">
+					<div class="sort w-100 text-center ftco-animate">
+						<div class="img" style="background-image: url(images/kind-6.jpg);"></div>
+						<h3>Whiskey</h3>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<span class="subheading">Our Delightful offerings</span>
+					<h2>Tastefully Yours</h2>
+				</div>
+			</div>
+			<div class="row">
+				{{#each products}}
+				<div class="col-md-3 d-flex">
+					<div class="product ftco-animate">
+						<div class="img d-flex align-items-center justify-content-center"
+							style="background-image: url(/product-images/{{this._id}}.jpg);"> {{!--IMAGE--}}
+							<div class="desc"> 
+								<p class="meta-prod d-flex">
+									{{!--CART--}} <a style="cursor:pointer;" onclick="addToCart('{{this._id}}')"
+										class="d-flex align-items-center justify-content-center"><span
+											class="flaticon-shopping-bag"></span></a>
+
+									{{!--WISHLIST--}} <a style="cursor:pointer;" onclick="addToWishlist('{{this._id}}')"
+										class="d-flex align-items-center justify-content-center"><span
+											class="flaticon-heart"></span></a>
+
+									{{!-VIEW PRODUCT-}} <a href="/viewproduct/{{this._id}}"
+										class="d-flex align-items-center justify-content-center"><span 
+											class="flaticon-visibility"></span></a>
+                                </p>
+							</div>
+						</div>
+						<div class="text text-center">
+							<span class="category">{{this.category}}</span>
+							<h2>{{this.name}}</h2>
+							<p class="mb-0"> <span class="price">Rs {{this.price}}</span></p>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+
+				
+				
+			</div>
+			<div class="row justify-content-center">
+					<div class="col-md-4">
+						<a href="/products" class="btn btn-primary d-block">View All Products <span
+								class="fa fa-long-arrow-right"></span></a>
+					</div>
+				</div>
+			
+	</section>
+
+	
+
+	<footer class="ftco-footer">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-sm-12 col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2 logo"><a href="#">Liquor <span>Store</span></a></h2>
+						<p>Far far away, behind the word mountains, far from the countries.</p>
+						<ul class="ftco-footer-social list-unstyled mt-2">
+							<li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+							<li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+							<li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md">
+					<div class="ftco-footer-widget mb-4 ml-md-4">
+						<h2 class="ftco-heading-2">My Accounts</h2>
+						<ul class="list-unstyled">
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Account</a></li>
+							<li><a href="/signup"><span class="fa fa-chevron-right mr-2"></span>Register</a></li>
+							<li><a href="/login"><span class="fa fa-chevron-right mr-2"></span>Log In</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Order</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md">
+					<div class="ftco-footer-widget mb-4 ml-md-4">
+						<h2 class="ftco-heading-2">Information</h2>
+						<ul class="list-unstyled">
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Quick Link</h2>
+						<ul class="list-unstyled">
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>New User</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help Center</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Report Spam</a></li>
+							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Faq's</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Have a Questions?</h2>
+						<div class="block-23 mb-3">
+							<ul>
+								<li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain
+										View, San Francisco, California, USA</span></li>
+								<li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929
+											210</span></a></li>
+								<li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
+											class="text">info@yourdomain.com</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid px-0 py-5 bg-black">
+			<div class="container">
+				<div class="row">
+					
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+	{{!--
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" />
+		</svg></div> --}}
+
+
+
+</body>
+
+</html>
+
+<script>
+	function addToCart(proId) {
+		$.ajax({
+			url: '/addToCart/' + proId,
+			method: 'get',
+			success: (response) => {
+				if (response.status) {
+					let count = $('#cartCount').html()
+					count = parseInt(count) + 1
+					$("#cartCount").html(count)
+					Swal.fire(
+						'Item added to Cart!',
+						'',
+						'success'
+					)
+
+				}else{
+					Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'You need to Login!',
+  showConfirmButton: false,
+  footer: '<a href="/login">Login Here...</a>'
+  
+})
+				}
+
+			}
+		})
+	}
+
+	function addToWishlist(proId) {
+		$.ajax({
+			url: '/addToWishlist/' + proId,
+			method: 'get',
+			success: (response) => {
+				console.log(response)
+				if (response.response.status) {
+					Swal.fire(
+						'Item added to Wishlist!',
+						'',
+						'success'
+					)
+
+
+				} else {
+					Swal.fire(
+						'Item removed from Wishlist !',
+						'',
+						'info'
+					)
+
+
+				}
+			}
+		})
+	}
+
+	
+</script>

@@ -1,0 +1,120 @@
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                <th>Banner</th>
+                <th>Description</th>
+                <th>Sub-Description</th>
+                <th></th>
+                <button type="button" class="btn btn-primary mb-3" data-toggle="modal"
+                                        data-target="#exampleModal">Add Banner</button>
+
+                
+            </tr>
+                            </thead>
+
+                            <tbody>
+                                {{#each banner}}
+            <tr>
+            <td><img src="/banner-images/{{this._id}}.jpg" style="width: 170px; height: 130px;"></td>
+                <td>{{this.description1}}</td>
+                <td>{{this.subDescription}}</td>
+                <td><a class="btn btn-primary btn-sm" href="/admin/editBanner/{{this._id}}">Edit</a>
+                {{!-- <a class="btn btn-danger btn-sm mt-3" href="/admin/deleteBanner/{{this._id}}">Delete</a> --}}
+                </td>
+
+            </tr>
+            {{/each}}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Your Website 2020</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Banner</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/admin/addbanner" method="post" enctype="multipart/form-data">
+
+                        <label class="text-dark" for="">Name</label>
+                        <input type="text" name="name" class="form-control"
+                            required><br>
+                            <label class="text-dark" for="">Description</label>
+                        <input type="text" name="description1" class="form-control"
+                            required><br>
+                            <label class="text-dark" for="">Sub Description</label>
+                        <input type="text" name="subDescription" class="form-control" 
+                            ><br>
+                               <label class="text-dark" for="">Image</label>
+                        <input type="file" name="Image" class="form-control" 
+                            ><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>

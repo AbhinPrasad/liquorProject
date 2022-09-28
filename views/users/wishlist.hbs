@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Liquor Store</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url(/banner-images/{{banner.[0]._id}}.jpg);"
+        data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-end justify-content-center">
+                <div class="col-md-9 ftco-animate mb-5 text-center">
+                    <p class="breadcrumbs mb-0"><span class="mr-2"><a href="/">Home <i
+                                    class="fa fa-chevron-right"></i></a></span> <span>Wishlist <i
+                                class="fa fa-chevron-right"></i></span></p>
+                    <h2 class="mb-0 bread">My Wishlist</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row">
+                <div class="table-wrap">
+                    <table class="table" id="mydiv">
+                        <thead class="thead-primary">
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th></th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each products}}
+                            <tr class="alert" role="alert">
+
+                                <td>
+                                    <div class="img"
+										style="background-image: url(/product-images/{{this.product._id}}.jpg);">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="email">
+                                        <span>{{this.product.name}}</span>
+                                    </div>
+                                </td>
+                                <td>Rs {{this.product.price}}</td>
+
+                                <td> <a class="btn btn-success text-light"  onclick="addToCart('{{this.product._id}}')">Move to Cart</a>
+                                </td>
+                                <td>
+                                    <button onclick="removeProduct('{{this._id}}','{{this.product._id}}')" class="close"
+                                        data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="fa fa-close"></i></span>
+                                    </button>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="ftco-footer">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-sm-12 col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2 logo"><a href="#">Liquor <span>Store</span></a></h2>
+                        <p>Far far away, behind the word mountains, far from the countries.</p>
+                        <ul class="ftco-footer-social list-unstyled mt-2">
+                            <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-4">
+                        <h2 class="ftco-heading-2">My Accounts</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Account</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Register</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Log In</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Order</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md">
+                    <div class="ftco-footer-widget mb-4 ml-md-4">
+                        <h2 class="ftco-heading-2">Information</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Quick Link</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>New User</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help Center</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Report Spam</a></li>
+                            <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Faq's</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md">
+                    <div class="ftco-footer-widget mb-4">
+                        <h2 class="ftco-heading-2">Have a Questions?</h2>
+                        <div class="block-23 mb-3">
+                            <ul>
+                                <li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain
+                                        View, San Francisco, California, USA</span></li>
+                                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929
+                                            210</span></a></li>
+                                <li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
+                                            class="text">info@yourdomain.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid px-0 py-5 bg-black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+        </svg></div>
+
+
+
+</body>
+
+</html>
+
+
+<script>
+    function removeProduct(wishlistId, proId) {
+		$.ajax({
+			url: '/remove-wishlist-product',
+			data: {
+				wishlist: wishlistId,
+				product: proId
+			},
+			method: 'post',
+			success: (response) => {
+				if (response.removeProduct) {
+					Swal.fire("Item removed from Wishlist", "", "info");
+					$("#mydiv").load(location.href + " #mydiv");
+				} else {
+					swal("Oops...", "Something went wrong", "error")
+				}
+			}
+		})
+	}
+</script>
+
+<script>
+    function addToCart(proId) {
+		$.ajax({
+			url: '/addToCart/' + proId,
+			method: 'get',
+			success: (response) => {
+				if (response.status) {
+					let count = $('#cartCount').html()
+					count = parseInt(count) + 1
+					$("#cartCount").html(count)
+					Swal.fire(
+						'Item added to Cart!',
+						'',
+						'success'
+					)
+
+				}
+            }
+        })
+    }
+</script>
