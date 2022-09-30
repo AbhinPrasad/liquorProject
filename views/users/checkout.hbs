@@ -126,7 +126,7 @@
 									<div class="cart-detail cart-total p-3 p-md-4">
 										<h3 class="billing-heading mb-4">Your Orders</h3>
 										<h5 class="">Products</h5>
-										{{#each products}}
+										{{#each products.cartItems}}
 										<p class="d-flex">
 											<span>{{this.product.name}}({{this.quantity}})</span>
 											<span>Rs {{this.productTotal}}</span>
@@ -136,21 +136,32 @@
 										<h3 class="billing-heading mb-4">Cart Total</h3>
 										<p class="d-flex">
 											<span>Subtotal</span>
-											<span>₹ {{total}}</span>
+											<span>₹ {{totalAmount}}</span>
+											
 										</p>
 										<p class="d-flex">
 											<span>Delivery</span>
-											<span>Free</span>
+											<span>100</span>
 										</p>
+										
 										<p class="d-flex">
 											<span>Discount</span>
-											₹<span id="discount"> 0.00</span>
+											₹<span id="discount">{{discountPrice}}</span>
 										</p>
 										<hr>
+										{{#if discountPrice}}
 										<p class="d-flex total-price">
 											<span>Total</span>
-											<span>₹ {{total}}</span>
+											<span> ₹ {{subtotal coupendiscount 100}} </span>
+											<input id="GrandTotal" name="GrandTotal" type="number" value="{{subtotal coupendiscount 100}}" hidden>
 										</p>
+										{{else}}
+										<p class="d-flex total-price">
+											<span>Total</span>
+											<span> ₹ {{subtotal totalAmount 100}}</span>
+											 <input id="GrandTotal" name="GrandTotal" type="number" value="{{subtotal totalAmount 100}}" hidden>
+										</p>
+										{{/if}}
 									</div>
 								</div>
 								<div class="col-md-6">
@@ -190,16 +201,10 @@
 								</div>
 							</div>
 					</form><!-- END -->
-					<div id="coup">
-						<form>
-							<input type="text" name="coupon" placeholder="COUPON CODE" id="code">
-							<button class="ml-3 rounded-pill btn btn-success"
-								onclick="checkCoupon(event)">Apply</button>
-
-						</form>
+					
 
 
-					</div>
+
 
 				</div> <!-- .col-md-8 -->
 			</div>
@@ -373,22 +378,7 @@
 		})
 	}
 
-	function checkCoupon(e) {
-		e.preventDefault()
-		code = $("#code").val();
-		alert(code)
-		$.ajax({
-			url: '/applyCoupon',
-			data: {
-				code: code
-			},
-			method: 'post',
-			success: (response) => {
-				document.getElementById('discount').innerHTML = response
-				$("#coup").load(location.href + " #coup");
-			}
-		})
-	}
+	
 
 
 
@@ -407,26 +397,5 @@
 	}
 </script>
 
-{{!--
-<script>
-	$("#applyCoupon").submit(() => {
-		$.ajax({
-			url: '/applyCoupon',
-
-			data: $("#applyCoupon").serialize(),
-			method: 'post',
-			success: (response) => {
-				document.getElementById('discount').innerHTML = response
-				$("#mydiv").load(location.href + " #mydiv");
-				$("#discount").load(location.href + " #discount");
-				//$("#coupon").load(location.href + " #coupon");
-				//$("#price").load(location.href + " #price");
 
 
-
-			}
-		})
-	})
-
-
-</script> --}}

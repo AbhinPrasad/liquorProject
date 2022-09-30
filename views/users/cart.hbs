@@ -1,344 +1,591 @@
-<body>
-   {{#if products}}
-	<section class="hero-wrap hero-wrap-2" style="background-image: url(/banner-images/{{banner.[0]._id}}.jpg);"
-		data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text align-items-end justify-content-center">
-				<div class="col-md-9 ftco-animate mb-5 text-center">
-					<p class="breadcrumbs mb-0"><span class="mr-2"><a href="/">Home <i
-									class="fa fa-chevron-right"></i></a></span> <span>Cart <i
-								class="fa fa-chevron-right"></i></span></p>
-					<h2 class="mb-0 bread">My Cart</h2>
+{{#if cartEmpty}}
+
+
+
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url('banner-images/{{banner.[1]._id}}.jpg');"
+	data-stellar-background-ratio="0.5">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row no-gutters slider-text align-items-end justify-content-center">
+			<div class="col-md-9 ftco-animate mb-5 text-center">
+				<p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i
+								class="fa fa-chevron-right"></i></a></span> <span>Cart <i
+							class="fa fa-chevron-right"></i></span></p>
+				<h2 class="mb-0 bread">My Cart</h2>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+
+	<div class="container-fluid  mt-100">
+		<div class="row">
+
+			<div class="col-md-12">
+
+				<div class="card">
+
+					<div class="card-body cart">
+						<div class="col-sm-12 empty-cart-cls text-center">
+							<img src="https://i.imgur.com/dCdflKN.png" width="130" height="130"
+								class="img-fluid mb-4 mr-3">
+							<h3><strong>Your Cart is Empty</strong></h3>
+							<h4>Add something to make me happy :)</h4>
+							<a href="/" class="btn btn-primary cart-btn-transform m-3" data-abc="true">continue
+								shopping</a>
+
+
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+<footer class="ftco-footer">
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-sm-12 col-md">
+				<div class="ftco-footer-widget mb-4">
+					<h2 class="ftco-heading-2 logo"><a href="#">Attire <span>Fashions</span></a></h2>
+					<p>Far far away, behind the word mountains, far from the countries.</p>
+					<ul class="ftco-footer-social list-unstyled mt-2">
+						<li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+						<li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+						<li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md">
+				<div class="ftco-footer-widget mb-4 ml-md-4">
+					<h2 class="ftco-heading-2">My Accounts</h2>
+					<ul class="list-unstyled">
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Account</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Register</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Log In</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Order</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md">
+				<div class="ftco-footer-widget mb-4 ml-md-4">
+					<h2 class="ftco-heading-2">Information</h2>
+					<ul class="list-unstyled">
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md">
+				<div class="ftco-footer-widget mb-4">
+					<h2 class="ftco-heading-2">Quick Link</h2>
+					<ul class="list-unstyled">
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>New User</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help Center</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Report Spam</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Faq's</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md">
+				<div class="ftco-footer-widget mb-4">
+					<h2 class="ftco-heading-2">Have a Questions?</h2>
+					<div class="block-23 mb-3">
+						<ul>
+							<li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain
+									View, San Francisco, California, USA</span></li>
+							<li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929
+										210</span></a></li>
+							<li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
+										class="text">info@yourdomain.com</span></a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-
-	<section class="ftco-section">
+	</div>
+	<div class="container-fluid px-0 py-5 bg-black">
 		<div class="container">
 			<div class="row">
-				<div class="table-wrap">
-					<table class="table" id="mydiv">
-						<thead class="thead-primary">
-							<tr>
-								<th>&nbsp;</th>
-								<th>&nbsp;</th>
-								<th>Product</th>
-								<th>Price</th>
-								<th>Quantity</th>
-								<th>total</th>
-								<th>&nbsp;</th>
-							</tr>
-						</thead>
-						<tbody>
-							{{#each products}}
-							<tr class="alert" role="alert">
-								<td>
-									<label class="checkbox-wrap checkbox-primary">
-										<input type="checkbox" checked>
-										<span class="checkmark"></span>
-									</label>
-								</td>
-								<td>
-									<div class="img"
-										style="background-image: url(/product-images/{{this.product._id}}.jpg);">
-									</div>
-								</td>
-								<td>
-									<div class="email">
-										<span>{{this.product.name}}</span>
-									</div>
-								</td>
-								<td>Rs {{this.product.price}}</td>
+				<div class="col-md-12">
 
-								<td class="quantity">
-
-									<div class="input-group mb-3" style="width: 109px;">
-										<button class="btn btn-light btn-sm"
-											onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user2}}',-1)">-</button>
-										<span id="{{this.product._id}}"
-											style="font-weight: bold; font-size: 15px; color: black;"
-											class="mt-2 ml-2">{{this.quantity}}</span>
-										<button class="btn btn-light btn-sm ml-2"
-											onclick="changeQuantity('{{this._id}}','{{this.product._id}}','{{../user2}}',1)">+</button>
-									</div>
+					<p class="mb-0" style="color: rgba(255,255,255,.5);">
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+						is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a
+							href="https://colorlib.com" target="_blank">Colorlib.com</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
 
 
-								</td>
-								<td id="{{this.product._id}}{{this.product._id}}" >Rs {{this.productTotal}}</td>
-								<td>
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+		<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+		<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+			stroke="#F96D00" />
+	</svg></div>
+
+<style>
+	@import url(http://fonts.googleapis.com/css?family=Calibri:400,300,700);
+
+	body {
+		background-color: #eee;
+	}
+
+	.mt-100 {
+		margin-top: 100px;
+
+	}
+
+
+	.card {
+		margin-bottom: 30px;
+		border: 0;
+		-webkit-transition: all .3s ease;
+		transition: all .3s ease;
+		letter-spacing: .5px;
+		border-radius: 8px;
+		-webkit-box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, .05);
+		box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, .05);
+	}
+
+	.card .card-header {
+		background-color: #fff;
+		border-bottom: none;
+		padding: 24px;
+		border-bottom: 1px solid #f6f7fb;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+	}
+
+	.card-header:first-child {
+		border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+	}
+
+
+
+	.card .card-body {
+		padding: 30px;
+		background-color: transparent;
+	}
+
+	.btn-primary,
+	.btn-primary.disabled,
+	.btn-primary:disabled {
+		background-color: #4466f2 !important;
+		border-color: #4466f2 !important;
+	}
+</style>
+
+
+{{else}}
+
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url('banner-images/{{banner.[1]._id}}.jpg');"
+	data-stellar-background-ratio="0.5">
+	<div class="overlay"></div>
+	<div class="container">
+		<div class="row no-gutters slider-text align-items-end justify-content-center">
+			<div class="col-md-9 ftco-animate mb-5 text-center">
+				<p class="breadcrumbs mb-0"><span class="mr-2"><a href="index.html">Home <i
+								class="fa fa-chevron-right"></i></a></span> <span>Cart <i
+							class="fa fa-chevron-right"></i></span></p>
+				<h2 class="mb-0 bread">My Cart</h2>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ftco-section" id="oo">
+	<div class="container">
+		<div class="row">
+			<div class="table-wrap ">
+				<table class="table" id="myDiv">
+					<thead class="thead-primary">
+						<tr>
+							<th>Image</th>
+							<th>Product</th>
+							<th>Price</th>
+							<th>Quantity</th>
+							<th>Total</th>
+							<th>Remove</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each products}}
+						<tr class="alert" role="alert">
+							<td>
+								<div class="img"
+									style="background-image: url(/product-images/{{this.product._id}}.jpg);"></div>
+							</td>
+							<td>
+								<div class="email">
+									<span>{{this.product.name}}</span>
+									<span>{{this.product.description}}</span>
+								</div>
+							</td>
+							<td>
+								<h5 id="{{this.product._id}}-price">₹{{this.product.price}}</h5>
+							</td>
+							{{!-- {{/each}} --}}
+							<td class="quantity">
+								<div class="input-group">
+									{{!--
+							<td class="quantity">
+
+								<div class="input-group mb-3" style="width: 109px;">
+									<span class="input-group-text">-</span>
+									<input type="text" class="form-control" value={{this.quantity}}>
+									<span class="input-group-text">+</span>
+								</div>
+
+
+							</td> --}}
+							{{!-- <input type="text" name="quantity" class="quantity form-control input-number"
+								value="2" min="1" max="100"> --}}
+							{{!-- <button class="cart-item-count"
+								style="border: none; margin: 5px; font-weight: bold; font-size: 20px; color: black;"
+								onclick="changeQuantity('{{this._id}}','{{this.product._id}}',-1)"> -
+							</button> --}}
+							{{!-- <p style="font-weight: bold; font-size: 15px; color: black; margin-top: 5px;">
+								{{this.quantity}}</p> --}}
+							{{!-- <span id="{{this.product._id}}"
+								style="font-weight: bold; font-size: 15px; color: black;" class="mt-2">
+								{{this.quantity}} </span>
+							<button class="cart-item-count"
+								style="border: none; margin: 5px; font-weight: bold; font-size: 20px; color: black;"
+								onclick="changeQuantity('{{this._id}}','{{this.product._id}}',1)"> +
+							</button> --}}
+							<div class="input-group quantity mx-auto" style="width: 100px;">
+								<div class="input-group-btn">
+									<button class="btn btn-sm btn-dark btn-minus"
+										onclick="changeQuantity('{{this._id}}','{{this.product._id}}',-1)">
+										<i class="fa fa-minus"></i>
+									</button>
+								</div>
+								<input type="text" class="form-control form-control-sm  text-center"
+									id="{{this.product._id}}" value="{{this.quantity}}" disabled>
+								<div class="input-group-btn">
+									<button class="btn btn-sm btn-dark btn-plus"
+										onclick="changeQuantity('{{this._id}}','{{this.product._id}}',1)">
+										<i class="fa fa-plus"></i>
+									</button>
+								</div>
+							</div>
+
+
+
+			</div>
+			</td>
+			<td>
+				<h5 id="{{this.product._id}}{{this.product._id}}"> Rs {{this.productTotal}} </h5>
+
+			</td>
+			{{!-- <td> ndjkns</td> --}}
+			{{!-- <td id="{{this.product._id}}{{this.product._id}}">Rs {{this.productTotal}}</td> --}}
+			{{!-- <td>
+				<a href="/deletecart/{{product._id}}" class="btn btn-danger">Remove</a> --}}
+
+				{{!-- <button onclick="removeProduct('{{this._id}}','{{this.product._id}}')" class="close"
+					data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true"><i class="fa fa-close"></i></span>
+				</button>
+			</td> --}}
+			<td>
 									<button onclick="removeProduct('{{this._id}}','{{this.product._id}}')" class="close"
 										data-dismiss="alert" aria-label="Close">
 										<span aria-hidden="true"><i class="fa fa-close"></i></span>
 									</button>
 								</td>
-							</tr>
+
+			</tr>
+			{{/each}}
+			</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="row justify-content-end">
+		<div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
+
+			<div class="cart-total mb-3 mt-3">
+				<h3>Cart Summary</h3>
+				<hr>
+				{{!-- <p class="d-flex total-price">
+					<span>Discount</span>
+					<span id="total"> ₹ 89</span>
+				</p> --}}
+
+				<p class="d-flex total-price">
+					<span>Sub Total</span>
+					<span id="subtotal">₹{{totalAmount}}</span>
+				</p>
+
+				<p class="d-flex total-price">
+					<span>Delivery Charge</span>
+					<span id="shipping">₹ 100</span>
+				</p>
+				<h4>Use Coupon to get Discount</h4>
+				<button class="site-btn ml-3 btn-warning" style="border: none; border-radius: 5px;" type="button"
+					data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+					aria-controls="collapseExample">
+					Click to get Coupon
+				</button>
+				<div class="collapse col-md-10 col-lg-12" id="collapseExample">
+					<div class="d-flex">
+
+
+						<div class=" mt-2 m-3 " style="width: 18rem;">
+							{{#each userCoupon}}
+							<p>
+							<h6>{{this.name}}</h6>
+							<h4>{{this.code}}</h4>
+							</p>
 							{{/each}}
-						</tbody>
-					</table>
-				</div>
-			</div>
-			<div class="row justify-content-end">
-				<div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
-					<div class="cart-total mb-3">
-						<h3>Cart Totals</h3>
-						<p class="d-flex">
-							<span>Subtotal</span>
-							<span id="subtotal">{{total}}</span>
-						</p>
-						<p class="d-flex">
-							<span>Delivery</span>
-							<span>FREE</span>
-						</p>
-						{{!-- <p class="d-flex">
-							<span>Discount</span>
-							<span>$3.00</span>
-						</p> --}}
-						<hr>
-						<p class="d-flex total-price">
-							<span>Total</span>
-							<span id="total">{{total}}</span>
-						</p>
-					</div>
-					<p class="text-center"><a href="/checkout" class="btn btn-primary py-3 px-4">Proceed to
-							Checkout</a></p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<footer class="ftco-footer">
-		<div class="container">
-			<div class="row mb-5">
-				<div class="col-sm-12 col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2 logo"><a href="#">Liquor <span>Store</span></a></h2>
-						<p>Far far away, behind the word mountains, far from the countries.</p>
-						<ul class="ftco-footer-social list-unstyled mt-2">
-							<li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
-							<li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
-							<li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-sm-12 col-md">
-					<div class="ftco-footer-widget mb-4 ml-md-4">
-						<h2 class="ftco-heading-2">My Accounts</h2>
-						<ul class="list-unstyled">
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Account</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Register</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Log In</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Order</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-sm-12 col-md">
-					<div class="ftco-footer-widget mb-4 ml-md-4">
-						<h2 class="ftco-heading-2">Information</h2>
-						<ul class="list-unstyled">
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-sm-12 col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Quick Link</h2>
-						<ul class="list-unstyled">
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>New User</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help Center</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Report Spam</a></li>
-							<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Faq's</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-sm-12 col-md">
-					<div class="ftco-footer-widget mb-4">
-						<h2 class="ftco-heading-2">Have a Questions?</h2>
-						<div class="block-23 mb-3">
-							<ul>
-								<li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain
-										View, San Francisco, California, USA</span></li>
-								<li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929
-											210</span></a></li>
-								<li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
-											class="text">info@yourdomain.com</span></a></li>
-							</ul>
 						</div>
+
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="container-fluid px-0 py-5 bg-black">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-
-						<p class="mb-0" style="color: rgba(255,255,255,.5);">
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							Copyright &copy;
-							<script>document.write(new Date().getFullYear());</script> All rights reserved | This
-							template is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a
-								href="https://colorlib.com" target="_blank">Colorlib.com</a>
-							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
 
 
-
-	<!-- loader -->
-	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
-		</svg></div>
-
-
-
-</body>
-
-</html>
-{{else}}
-<section class="hero-wrap hero-wrap-2" style="background-image: url(/banner-images/{{banner.[0]._id}}.jpg);"
-		data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row no-gutters slider-text align-items-end justify-content-center">
-				<div class="col-md-9 ftco-animate mb-5 text-center">
-					<p class="breadcrumbs mb-0"><span class="mr-2"><a href="/">Home <i
-									class="fa fa-chevron-right"></i></a></span> <span>Cart <i
-								class="fa fa-chevron-right"></i></span></p>
-					<h2 class="mb-0 bread">My Cart</h2>
-				</div>
-			</div>
-		</div>
-	</section>
-
-<div class="container-fluid  mt-100">
-				 <div class="row">
-				 
-					<div class="col-md-12">
-					
-							<div class="card">
-						
-						<div class="card-body cart">
-								<div class="col-sm-12 empty-cart-cls text-center">
-									<img src="https://i.imgur.com/dCdflKN.png" width="130" height="130" class="img-fluid mb-4 mr-3">
-									<h3><strong>Your Cart is Empty</strong></h3>
-									<h4>Add something to make me happy :)</h4>
-									<a href="/products" class="btn btn-primary cart-btn-transform m-3" data-abc="true">continue shopping</a>
-									
-								
-								</div>
+				<div class="input-group mt-3">
+					<form class="mb-5" id="coupenarea">
+						<div class="input-group-append">
+							<input type="text" class="form-control p-4" name="code" placeholder="Coupon Code">
+							<button class="btn btn-primary" type="submit" style="background-color: #ff3368">Apply
+								Coupon </button>
 						</div>
+					</form>
 				</div>
-						
-					
+				<p class="d-flex total-price">
+					<span>Coupon Discount</span>
+					<span id="coupendiscount">₹</span>
+				</p>
+				{{!-- <p class="d-flex total-price">
+					<span>Coupon Discount</span>
+				<h6 class=" font-weight-medium">Rs.<span id="coupendiscount"> </span></h6>
+				</p> --}}
+
+				<p class="d-flex total-price">
+					<span>Grand Total</span>
+					<span id="GrandTotal">₹ {{subtotal totalAmount 100}} </span>
+					{{!-- <span>₹ 565</span> --}}
+				</p>
+
+				<p class="text-center"><a href="/checkout" class="btn btn-primary py-3 px-4">Proceed to Checkout</a>
+				</p>
+			</div>
+
+
+		</div>
+	</div>
+</section>
+
+
+<footer class="ftco-footer">
+	<div class="container">
+		<div class="row mb-5">
+			<div class="col-sm-12 col-md">
+				<div class="ftco-footer-widget mb-4">
+					<h2 class="ftco-heading-2 logo"><a href="#">Attire <span>Fashions</span></a></h2>
+					<p>Far far away, behind the word mountains, far from the countries.</p>
+					<ul class="ftco-footer-social list-unstyled mt-2">
+						<li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+						<li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+						<li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md">
+				<div class="ftco-footer-widget mb-4 ml-md-4">
+					<h2 class="ftco-heading-2">My Accounts</h2>
+					<ul class="list-unstyled">
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Account</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Register</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Log In</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>My Order</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md">
+				<div class="ftco-footer-widget mb-4 ml-md-4">
+					<h2 class="ftco-heading-2">Information</h2>
+					<ul class="list-unstyled">
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>About us</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Catalog</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Contact us</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Term &amp; Conditions</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md">
+				<div class="ftco-footer-widget mb-4">
+					<h2 class="ftco-heading-2">Quick Link</h2>
+					<ul class="list-unstyled">
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>New User</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Help Center</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Report Spam</a></li>
+						<li><a href="#"><span class="fa fa-chevron-right mr-2"></span>Faq's</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md">
+				<div class="ftco-footer-widget mb-4">
+					<h2 class="ftco-heading-2">Have a Questions?</h2>
+					<div class="block-23 mb-3">
+						<ul>
+							<li><span class="icon fa fa-map marker"></span><span class="text">203 Fake St. Mountain
+									View, San Francisco, California, USA</span></li>
+							<li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929
+										210</span></a></li>
+							<li><a href="#"><span class="icon fa fa-paper-plane pr-4"></span><span
+										class="text">info@yourdomain.com</span></a></li>
+						</ul>
 					</div>
-				 
-				 </div>
-				
 				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid px-0 py-5 bg-black">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
 
-				<style>
-					@import url(http://fonts.googleapis.com/css?family=Calibri:400,300,700);
-
-body {
-    background-color: #eee;
-}
-
-.mt-100{
-   margin-top:100px;
-
-}
-
-
-.card {
-    margin-bottom: 30px;
-    border: 0;
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease;
-    letter-spacing: .5px;
-    border-radius: 8px;
-    -webkit-box-shadow: 1px 5px 24px 0 rgba(68,102,242,.05);
-    box-shadow: 1px 5px 24px 0 rgba(68,102,242,.05);
-}
-
-.card .card-header {
-    background-color: #fff;
-    border-bottom: none;
-    padding: 24px;
-    border-bottom: 1px solid #f6f7fb;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-.card-header:first-child {
-    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
-}
+					<p class="mb-0" style="color: rgba(255,255,255,.5);">
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+						is made with <i class="fa fa-heart color-danger" aria-hidden="true"></i> by <a
+							href="https://colorlib.com" target="_blank">Colorlib.com</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
 
 
 
-.card .card-body {
-    padding: 30px;
-    background-color: transparent;
-}
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+		<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+		<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+			stroke="#F96D00" />
+	</svg>
+</div>
 
-.btn-primary, .btn-primary.disabled, .btn-primary:disabled {
-    background-color: #4466f2!important;
-    border-color: #4466f2!important;
-}
-				</style>
 
 
 
 {{/if}}
+
+
+
+
+
+
 <script>
-		function changeQuantity(cartId, proId,userId, count) {
-	
-		let quantity = parseInt(document.getElementById(proId).innerHTML)
+	function changeQuantity(cartId, proId, count) {
+		let quantity = parseInt(document.getElementById(proId).value)
+		const productPrice = parseInt(document.getElementById(proId + '-price').innerHTML)
 		count = parseInt(count)
 		$.ajax({
 			url: '/change-product-quantity',
 			data: {
-				user: userId,
 				cart: cartId,
 				product: proId,
 				count: count,
 				quantity: quantity
+				//location.reload()
 			},
+
 			method: 'post',
 			success: (response) => {
-				
-				if (response.removeProduct) {
-					Swal.fire("Item removed from Cart", "", "info");
-					$("#mydiv").load(location.href + " #mydiv");
-					$("#total").load(location.href + " #total");
+				if (response.response.removeProduct) {
+					Swal.fire({
+						title: "Are you sure?",
+						text: "Are you sure you want to remove this item?",
+						icon: "warning",
+						buttons: true,
+						dangerMode: true,
+					})
+						.then((willDelete) => {
+							if (willDelete) {
 
+								Swal.fire("Your item is remooved from the cart", {
+									icon: "success",
+
+
+								});
+								location.reload()
+
+							} else {
+								Swal.fire("Your item is here!");
+							}
+						});
 
 				} else {
-					console.log(response)
+					console.log('elses')
+					console.log(proId, 'producti')
+					document.getElementById(proId).value = quantity + count
+					document.getElementById(proId).innerHTML = productPrice * (quantity + count)
 
-					document.getElementById(proId).innerHTML = quantity + count
-					document.getElementById('total').innerHTML = response.total
-					document.getElementById('subtotal').innerHTML = response.total
+					let subtotal = parseInt(document.getElementById('subtotal').innerHTML)
+					document.getElementById('subtotal').innerHTML = subtotal + (productPrice * count)
+					let total = parseInt(document.getElementById('GrandTotal').innerHTML)
+					document.getElementById('GrandTotal').innerHTML = total + (productPrice * count)
 
 
-					{{!-- document.getElementById(proId+proId).innerHTML =7777 --}}
-					$("#mydiv").load(location.href + " #mydiv");
+				}
+
+			}
+
+		})
+	}
+
+	//coupen adding//
+
+	$('#coupenarea').submit((e) => {
+		e.preventDefault();
+
+		$.ajax({
+			url: '/apply-coupen',
+			method: 'post',
+			data: $('#coupenarea').serialize(),
+
+			success: (response) => {
+				console.log(response)
+				if (response.response.status) {
+					console.log('hi')
+					document.getElementById('coupendiscount').innerHTML = response.response.discountPrice
+					document.getElementById('GrandTotal').innerHTML = response.response.discount + 100
+
+				} else {
+					Swal.fire("invalid", "This coupon invalid or already used", "warning")
 				}
 			}
 		})
-	}
-</script>
+	})
 
+
+
+</script>
 
 <script>
 

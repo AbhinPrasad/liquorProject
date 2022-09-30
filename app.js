@@ -23,14 +23,25 @@ app.engine('hbs',hbs.engine({helpers:{
   inc: function (value, options){
     return parseInt(value) +1;
   },
-  eq: function (v1,v2) {return v1 === v2;},
-gt: function (v1,v2) {return v1 > v2;},
-ne: function (v1, v2) { return v1 !== v2; },
-lt: function (v1, v2) { return v1 < v2; },
-lte: function (v1, v2) { return v1 <= v2; },
-gte: function (v1, v2) { return v1 >= v2; },
-and: function (v1, v2) { return v1 && v2; },
-or: function (v1, v2) { return v1 || v2; }
+  total: (quant, price) => {
+    return quant * price;
+  },
+  subtotal:(totalAmount,delivery)=>{
+    return totalAmount + delivery 
+
+  },
+  isEqual :(a, b, options)=>{
+    if(a == b){
+      return options.fn(this)
+    }
+    return options.inverse(this)
+  },
+  quantityShowing:(quantity,index)=>{
+    return quantity[index]
+  },
+  quantitymulty:(quantity,index,price)=>{
+    return quantity[index]*price
+  },
 },extname:'hbs',layoutsDir:__dirname+'/views/layout/',partialsDir:__dirname+'/views/partials/'}))
 
 

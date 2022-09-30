@@ -335,33 +335,27 @@ router.post('/editbanner/:id', verifyLogin, (req, res, next) => {
   }
 })
 
-//coupon
-// router.get('/addCoupon', (req, res, next) => {
-//   try{
-//     res.render('admin/addCoupon', { layout: 'admin-layout', admin: true })
-// }catch(err){
-//   next(err)
-// }
-// })
 
-// router.post('/addcoupon', (req, res, next) => {
-//   try{
-//     adminHelperss.addCoupon(req.body).then(() => {
-//       res.redirect('/admin/addCoupon')
-//     })
-//   }catch(err){
-//     next(err)
-//   }
-// })
+
+router.post('/addcoupon', (req, res, next) => {
+    try{
+      adminHelperss.addCoupon(req.body).then((response) => {
+        res.redirect('/admin/ViewCoupons')
+      })
+    }catch(err){
+      next(err)
+    }
+  
+})
 
 router.get('/viewCoupons', (req, res, next) => {
- //try{
+ try{
   adminHelpers.viewCoupons().then((coupons) => {
     res.render('admin2/coupons', { layout: 'admin2-layout', admin2: true, coupons })
   })
-//  }catch(err){
-//   next(err)
-//  }
+ }catch(err){
+  next(err)
+ }
 })
 
 

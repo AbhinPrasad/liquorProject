@@ -6,6 +6,9 @@ const { BulkCountryUpdatePage } = require('twilio/lib/rest/voice/v1/dialingPermi
 const { response } = require('express');
 const bcrypt = require('bcrypt');
 const { resolve } = require('express-hbs/lib/resolver');
+const userHelpers = require('../helpers/user-helpers')
+
+
 
 
 
@@ -255,26 +258,23 @@ module.exports = {
     },
 
     addCoupon: (coupon) => {
+        coupon.discount = parseInt(coupon.discount)
         return new Promise((resolve, reject) => {
-          try{
             db.get().collection(COUPON_COLLECTION).insertOne(coupon).then((data)=>{
-                resolve(data.insertedId)
+                resolve(data)
             })
-          }catch(err){
-            reject(err)
-          }
+         
         })
     },
 
     viewCoupons:()=>{
         return new Promise(async(resolve,reject)=>{
-          //try{
+          try{
             let coupon =  await db.get().collection(COUPON_COLLECTION).find().toArray()
-            console.log(coupon);
             resolve(coupon)
-        //   }catch(err){
-        //     reject(err)
-        //   }
+          }catch(err){
+            reject(err)
+          }
         })
     },
 
@@ -410,33 +410,69 @@ module.exports = {
             }
         })
     },
-    totalCost: () => {
-        return new Promise(async (resolve, reject) => {
-            try {
-                total = await db.get().collection(ORDERS_COLLECTION).aggregate([
-                    {
-                        $match: {
-                            delivarystatus: "pending"
-                        }
-                    },
+    // totalCost: () => {
+    //     return new Promise(async (resolve, reject) => {
+    //         try {
+    //             total = await db.get().collection(ORDERS_COLLECTION).aggregate([
+    //                 {
+    //                     $match: {
+    //                         delivarystatus: "pending"
+    //                     }
+    //                 },
 
-                    {
-                        $project: {
-                            'delivaryAddress.totalAmount': 1
-                        }
-                    },
-                    {
-                        $group: {
-                            _id: null,
-                            sum: { $sum: '$delivaryAddress.totalAmount' }
-                        }
-                    }
-                ]).toArray()
-                resolve(total)
-            } catch (err) {
-                reject(err)
+    //                 {
+    //                     $project: {
+    //                         'delivaryAddress.totalAmount': 1
+    //                     }
+    //                 },
+    //                 {
+    //                     $group: {
+    //                         _id: null,
+    //                         sum: { $sum: '$delivaryAddress.totalAmount' }
+    //                     }
+    //                 }
+    //             ]).toArray()
+    //             resolve(total)
+    //         } catch (err) {
+    //             reject(err)
+    //         }
+    //     })
+    // },
+
+    ApplyCoupen:(coupendata,userId)=>{
+
+        
+        return new Promise(async(resolve,reject)=>{
+          try{
+            let response = {}
+            console.log(coupendata,'data')
+            let coupen = await db.get().collection(collection.COUPON_COLLECTION).findOne({code:coupendata.code})
+            console.log(coupen,'coupon')
+            if(coupen){
+                let userExist = await db.get().collection(collection.COUPON_COLLECTION).findOne({code:coupendata.code,users:{$in:[ObjectId(userId)]}})
+                if(userExist){
+                    response.status = false
+                    response.coupen = coupen
+                    resolve(response)
+                }else{
+                    response.coupen = coupen
+                    response.status = true
+                    userHelpers.getTotalAmount(userId).then((total)=>{
+                        response.discount = total - ((total * coupen.discount) / 100)
+                        response.discountPrice = (total * coupen.discount) / 100
+                        resolve(response)
+                    })
+                }
+            }else{
+                response.status = false
+                resolve(response)
             }
+          }catch(err){
+            reject(err)
+          }
+
         })
+
     }
 
 }
