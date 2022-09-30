@@ -244,7 +244,7 @@ router.get('/viewOrders', verifyLogin, async (req, res, next) => {
     orders = await adminHelperss.viewOrders()
     orderId = req.session.orderId
     orderStatus = await adminHelperss.viewStatus()
-    res.render('admin2/Orders', { layout: 'admin2-layout', admin2: true, orders, orderStatus })
+    res.render('admin2/orders', { layout: 'admin2-layout', admin2: true, orders, orderStatus })
   } catch (err) {
     next(err)
   }
